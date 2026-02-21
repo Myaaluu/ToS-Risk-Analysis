@@ -232,14 +232,15 @@ async def analyze_contract(request: ContractRequest):
     email_template = generate_email_template(request.app_purpose, permission_analysis["high_risk"])
 
     return {
-        "permissions": {
-            "required": permission_analysis["required"],
-            "requested": permission_analysis["requested"],
-            "high_risk": permission_analysis["high_risk"],
-            "legitimate": permission_analysis["legitimate"]
-        },
-        "email_template": email_template,
-        "proof_of_state": {
-            "hash": contract_hash,
-            "timestamp": timestamp
-        }}
+    "permissions": {
+        "required": permission_analysis["required"],
+        "requested": permission_analysis["requested"],
+        "high_risk": permission_analysis["high_risk"],
+        "legitimate": permission_analysis["legitimate"]
+    },
+    "email_template": email_template,
+    "proof_of_state": {
+        "hash": contract_hash,
+        "timestamp": timestamp
+    }
+}
