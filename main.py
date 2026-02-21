@@ -242,5 +242,4 @@ async def analyze_contract(request: ContractRequest):
         "proof_of_state": {
             "hash": contract_hash,
             "timestamp": timestamp
-        }
-    }
+        }}
